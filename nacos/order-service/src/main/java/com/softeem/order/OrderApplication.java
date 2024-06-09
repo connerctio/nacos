@@ -1,5 +1,7 @@
 package com.softeem.order;
 
+import com.alibaba.cloud.nacos.ribbon.NacosRule;
+import com.netflix.loadbalancer.IRule;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +21,10 @@ public class  OrderApplication {
     public RestTemplate restTemplate(){
         System.out.println("创建RestTemplate");
         return new RestTemplate();
+    }
+    @Bean
+    public IRule myRule(){
+        return new NacosRule();
     }
 
 }
