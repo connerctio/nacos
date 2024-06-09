@@ -1,0 +1,5 @@
+com\softeem\user\service\UserService.class
+com\softeem\user\mapper\UserMapper.class
+com\softeem\user\pojo\User.class
+com\softeem\user\web\UserController.class
+com\softeem\user\UserApplication.class
