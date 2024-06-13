@@ -22,9 +22,9 @@ public class  OrderApplication {
         System.out.println("创建RestTemplate");
         return new RestTemplate();
     }
-    @Bean
+/*    @Bean
     public IRule myRule(){
         return new NacosRule();
-    }
+    }*/
 
 }
