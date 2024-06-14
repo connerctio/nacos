@@ -1,5 +1,6 @@
 package com.softeem.order.web;
 
+import com.softeem.order.client.UserClient;
 import com.softeem.order.pojo.Order;
 import com.softeem.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("order")
 public class OrderController {
 
-   @Autowired
-   private OrderService orderService;
+    @Autowired
+    private OrderService orderService;
 
     @GetMapping("{orderId}")
     public Order queryOrderByUserId(@PathVariable("orderId") Long orderId) {

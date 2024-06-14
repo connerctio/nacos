@@ -9,9 +9,11 @@ spring:
   application:
     name: orderservice
   cloud:
+    compatibility-verifier:
+      enabled: false
     nacos:
       server-addr: 127.0.0.1:80
-      discovery:
+#      discovery:
 #        ephemeral: false # 是否是临时实例
 #        cluster-name: HZ # 集群名称
 #        namespace: aefa0396-7540-403a-bfd8-2bcb8fe88f6a

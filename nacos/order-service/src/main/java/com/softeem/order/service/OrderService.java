@@ -1,5 +1,6 @@
 package com.softeem.order.service;
 
+import com.softeem.order.client.UserClient;
 import com.softeem.order.mapper.OrderMapper;
 import com.softeem.order.pojo.Order;
 import com.softeem.order.pojo.User;
@@ -13,9 +14,21 @@ public class OrderService {
     @Autowired
     private OrderMapper orderMapper;
     @Autowired
-    private RestTemplate restTemplate;
+    private UserClient userClient;
 
     public Order queryOrderById(Long orderId) {
+        // 1.查询订单
+        Order order = orderMapper.findById(orderId);
+        //2.远程查询user
+        User user = userClient.findById(order.getUserId());
+        //3.封装user到order
+        order.setUser(user);
+        // 4.返回
+        return order;
+    }
+
+
+/*    public Order queryOrderById(Long orderId) {
         // 1.查询订单
         Order order = orderMapper.findById(orderId);
         //2.远程查询user
@@ -28,5 +41,6 @@ public class OrderService {
         order.setUser(user);
         // 4.返回
         return order;
-    }
+    }*/
+
 }

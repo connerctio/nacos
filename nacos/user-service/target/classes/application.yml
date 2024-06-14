@@ -8,9 +8,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: userservice
-#  cloud:
-#    nacos:
-#      server-addr: 192.168.241.128:8001
+  cloud:
+    compatibility-verifier:
+      enabled: false
+    nacos:
+      server-addr: 127.0.0.1:80
 #      discovery:
 #        cluster-name: HZ # 集群名称
 mybatis:
@@ -22,7 +24,4 @@ logging:
     com.softeem: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://127.0.0.1:10086/eureka
+
